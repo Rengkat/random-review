@@ -7,11 +7,11 @@ function Review() {
   const [reviewIndex, setReviewIndex] = useState(0);
   const { name, job, image, text, id } = reviews[reviewIndex];
   const loop = (index) => {
-    if (index > reviewIndex.length) {
+    if (index > reviews.length - 1) {
       return 0;
     }
     if (index < 0) {
-      return reviewIndex.length - 1;
+      return reviews.length - 1;
     }
     return index;
   };
@@ -48,9 +48,7 @@ function Review() {
           <h1 className="font-bold text-2xl">
             {name.charAt(0).toUpperCase() + name.slice(1)}
           </h1>
-          <h4 className="text-lg">
-            {job.charAt(0).toUpperCase() + job.slice(1)}
-          </h4>
+          <h4 className="text-lg text-blue-400">{job.toUpperCase()}</h4>
           <p className="p-3">{text}</p>
         </div>
         <div className="flex justify-center space-x-5">
